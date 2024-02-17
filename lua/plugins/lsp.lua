@@ -2,10 +2,19 @@ return {
   -- LSP has three parts: Mason,
 
   -- Mason
+  -- Installs and manages the LSPs
   {
     "williamboman/mason.nvim",
     config = function()
-      require('mason').setup()
+      require('mason').setup({
+        ui = {
+          icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+          }
+        }
+      })
     end
   },
 
@@ -26,9 +35,11 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
+      -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local lspconfig = require("lspconfig")
-      lspconfig.lua_ls.setup({})
-      lspconfig.tsserver.setup({})
+      lspconfig.lua_ls.setup({capabilities = capabilities})
+      lspconfig.tsserver.setup({capabilities = capabilities})
     end
   }
 }
