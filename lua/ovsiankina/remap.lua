@@ -18,9 +18,12 @@ vim.keymap.set("n", "gd", vim.lsp.buf.definition, {}) -- Go to definitions
 vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, {})
 
 -- None-ls
-vim.keymap.set("n", "<space>gf", vim.lsp.buf.format, {})
+vim.keymap.set("n", "<space>fc", vim.lsp.buf.format, {})
 
 ---------- GIT ----------
 
 -- Git signs
 vim.keymap.set("n", "<space>gp", ":Gitsigns preview_hunk<CR>", {})
+
+-- Vim fugitive
+vim.keymap.set("n", "<space>gc", ":Git ", {})
