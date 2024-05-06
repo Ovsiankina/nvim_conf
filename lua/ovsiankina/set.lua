@@ -3,18 +3,22 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 
 -- 4 spaces indents
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.smartindent = true
+
+-- Allow to chose with a command (TODO) catpuccin theme
+-- TODO Add command to change this to dark or light
+vim.g.background = "light"
 
 -- Disable line wrap
 vim.opt.wrap = false
 
 -- Prevent vim backups
 vim.opt.swapfile = false
-vim.opt.backup = false
+-- vim.opt.backup = false
 -- allow undotree to access old versions from days ago
 vim.opt.undodir = os.getenv('HOME') .. '/.vim/undodir'
 vim.opt.undofile = true
