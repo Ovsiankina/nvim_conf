@@ -17,7 +17,6 @@ return {
 			},
 		})
 		vim.cmd.colorscheme("catppuccin")
-
 		----- Remap -----
 		-- Change the to dark or light (macchiato/latte)
 		function ToggleBackground()

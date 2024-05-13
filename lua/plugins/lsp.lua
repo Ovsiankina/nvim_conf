@@ -67,6 +67,10 @@ return {
       lspconfig.html.setup({
         capabilities = capabilities,
       })
+      -- cpp
+      lspconfig.clangd.setup({
+        capabilities = capabilities,
+      })
     end,
   },
 }
