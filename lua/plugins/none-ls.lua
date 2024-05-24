@@ -9,7 +9,6 @@ return {
       sources = {
         null_ls.builtins.formatting.stylua,   --stylua in :Mason
         null_ls.builtins.formatting.prettier, -- JS
-        null_ls.builtins.diagnostics.eslint_d, --JS
         null_ls.builtins.diagnostics.phpmd,   --PHP
         null_ls.builtins.diagnostics.pylint,  --Python
         null_ls.builtins.diagnostics.checkstyle, --Java

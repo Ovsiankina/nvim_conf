@@ -1,5 +1,4 @@
--- Line numbers
-vim.opt.nu = true
+-- Line numbers vim.opt.nu = true
 vim.opt.relativenumber = true
 
 -- 4 spaces indents
@@ -20,7 +19,8 @@ vim.opt.wrap = false
 vim.opt.swapfile = false
 -- vim.opt.backup = false
 -- allow undotree to access old versions from days ago
-vim.opt.undodir = os.getenv('HOME') .. '/.vim/undodir'
+local home = os.getenv('HOME') or os.getenv('USERPROFILE')
+vim.opt.undodir = home .. '/.vim/undodir'
 vim.opt.undofile = true
 
 -- Make highlights incremental 
