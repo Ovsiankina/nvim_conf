@@ -92,7 +92,7 @@ return {
 			lspconfig.marksman.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.beautysh.setup({
+			lspconfig.texlab.setup({
 				capabilities = capabilities,
 			})
 		end,
