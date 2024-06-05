@@ -10,14 +10,38 @@ return {
 				light = "latte",
 				dark = "macchiato",
 			},
+			transparent_background = false, -- disables setting the background color.
+			custom_highlights = function(colors)
+				local u = require("catppuccin.utils.colors")
+				return {
+					CursorLine = {
+						bg = u.vary_color(
+							{ latte = u.lighten(colors.mantle, 0.70, colors.base) },
+							u.darken(colors.surface0, 0.64, colors.base)
+						),
+					},
+				}
+			end,
 			dim_inactive = {
-				enabled = false, -- dims the background color of inactive window
+				enabled = true, -- dims the background color of inactive window
 				shade = "dark",
 				percentage = 0.15, -- percentage of the shade to apply to the inactive window
 			},
+			color_overrides = {},
+			default_integrations = true,
+			integrations = {
+				cmp = true,
+				gitsigns = true,
+				nvimtree = true,
+				treesitter = true,
+				notify = false,
+				mini = {
+					enabled = true,
+					indentscope_color = "",
+				},
+			},
 		})
 		vim.cmd.colorscheme("catppuccin")
-
 		----- Remap -----
 		-- Change the to dark or light (macchiato/latte)
 		function ToggleBackground()
